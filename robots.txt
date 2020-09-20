@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://dhpollack.github.io/dhpollack/sitemap.xml
