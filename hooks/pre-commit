@@ -1,3 +1,14 @@
 #!/bin/bash
 
-cat <(echo -e "+++\nrender = false\n+++") README.md > resume_v2/content/README_with_frontmatter.md
+GIT_DIR=${GIT_DIR-`git rev-parse --git-dir`}
+BASE_DIR=$(realpath ${GIT_DIR}/..)
+
+if [ `git diff --cached --name-only --diff-filter=ACM | grep README.md` ]
+then
+	cat <(echo -e "+++\nrender = false\n+++") ${BASE_DIR}/README.md > ${BASE_DIR}/resume_v2/content/README_with_frontmatter.md
+	cd ${BASE_DIR}/resume_v2
+	bash ./generate-pdfs.sh
+	git add static/david-pollack-resume.pdf
+else
+	echo "README.md did not change"
+fi
