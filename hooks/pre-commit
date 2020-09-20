@@ -5,10 +5,12 @@ BASE_DIR=$(realpath ${GIT_DIR}/..)
 
 if [ `git diff --cached --name-only --diff-filter=ACM | grep README.md` ]
 then
-	cat <(echo -e "+++\nrender = false\n+++") ${BASE_DIR}/README.md > ${BASE_DIR}/resume_v2/content/README_with_frontmatter.md
+	README_PATH=${BASE_DIR}/README.md
+	ZOLA_README_PATH=${BASE_DIR}/resume_v2/content/README_with_frontmatter.md
+	cat <(echo -e "+++\nrender = false\n+++") $README_PATH > $ZOLA_README_PATH
 	cd ${BASE_DIR}/resume_v2
 	bash ./generate-pdfs.sh
-	git add static/david-pollack-resume.pdf
+	git add $ZOLA_README_PATH static/david-pollack-resume.pdf
 else
 	echo "README.md did not change"
 fi
