@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cat <(echo -e "+++\n+++") README.md > zola/README_with_frontmatter.md
