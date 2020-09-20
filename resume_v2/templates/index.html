@@ -1,0 +1,27 @@
+{% extends "anpu/templates/index.html" %}
+
+{% block extra_head %}
+<link rel="stylesheet" media="print" href="{{ get_url(path="no-print.css", trailing_slash=false) }}">
+{% endblock extra_head %}
+
+{% block content %}
+{% set page = get_page(path="README_with_frontmatter.md") %}
+{% set footer = get_page(path="footer.md") %}
+
+<article class="post">
+    <header>
+        <h3></h3>
+    </header>
+    <div class="content">
+        {{ page.content | safe }}
+    </div>
+    <footer>
+        {{ footer.content | safe }}
+        <div class="no-print">
+            <br>
+            <a href="david-pollack-resume.pdf" download><button>Download PDF</button></a>
+        </div>
+    </footer>
+</article>
+
+{% endblock content %}

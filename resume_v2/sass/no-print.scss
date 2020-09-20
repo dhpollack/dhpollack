@@ -1,0 +1,13 @@
+@media print
+{
+    /* Hide elements with class `no-print` */
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+    /* Hide the template's default footer */
+    div.container > footer, div.container > footer *
+    {
+        display: none !important;
+    }
+}

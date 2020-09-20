@@ -1,0 +1,3 @@
+[submodule "resume_v2/themes/anpu"]
+	path = resume_v2/themes/anpu
+	url = https://github.com/zbrox/anpu-zola-theme
