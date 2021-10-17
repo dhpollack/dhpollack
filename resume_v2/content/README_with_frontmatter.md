@@ -3,15 +3,15 @@ render = false
 +++
 ## Experience
 
-### Machine Learning Engineer @ Solvemate GmbH
+### Senior Machine Learning Engineer @ Solvemate GmbH
 
 ##### Berlin - 02/2020 to Present
 
-I am leading the project to implement free-text input into the existing decision tree-based chatbot framework, which is the most requested feature by our customers. This microservice can be configured to use different methods of word vectorization and text preprocessing. I wrote a custom solution to benchmark the different models and preprocessors used by this microservice. Additionally, I have integrated this microservice into our [Kubernetes](https://kubernetes.io/) architecture. This microservice utilizes a modern Python stack based on [fastAPI](https://fastapi.tiangolo.com/) and [Pydantic](https://pydantic-docs.helpmanual.io/) for serving and a modern testing / linting suite (fully pytest-based testing, [isort](https://github.com/PyCQA/isort), [black](https://github.com/psf/black), flake8).
+I led the project to implement free-text input into an existing decision tree-based click-bot. One project I am particular proud of is a word vectorization microservice that allows for configurable pipelines of word vectorization models, preprocessing and postprocessing, and sentiment analysis. This included a solution to benchmark the different pipelines (model + preprocessor combinations) used by this microservice. I also trained custom models in multiple languages for our word vectorization. Currently, I am tasked with troubleshooting and maintaining of our kubernetes-based architechture and develop a custom python-based cli-tool to automate tasks used by the entire engineering team. My latest project is adding a voice channel to our bots so our product can be accesssed via a telephone or another voice-based channel. 
 
-Other projects that I am working on include customer feedback analysis and text anonymization. I wrote a highly configurable research tool based on [Hydra](https://hydra.cc), which can use word-vector- as well as transformer-based models for feedback analysis. For text anonymization, we are exploring the use of [Microsoft's presidio](https://github.com/microsoft/presidio) library. In order to apply this to our use case, I made a [large OSS-contribution](https://github.com/microsoft/presidio/pull/312) to the project to completely rewrite the python analyzer engine. The primary feature that I added was the ability to use multiple language models at once, which enabled multilingual capabilities to the library. But I also completely modernized their unit tests, optimized the code, and removed a lot of hard-coded variables.
+From a software engineering / dev-ops perspective, I introduced a modern Python stack based on [fastAPI](https://fastapi.tiangolo.com/) and [Pydantic](https://pydantic-docs.helpmanual.io/), full pytest-based testing, and automatic linting/formatting via [isort](https://github.com/PyCQA/isort), [black](https://github.com/psf/black), flake8 to projects throughout the company. In addition to maintaining kubernetes, I also maintain our Google Cloud Platform, Jenkins instances, and various other legacy services as part of my dev-ops duties.
 
-From a software engineering / dev-ops perspective, I have also become quite proficient with web frameworks (flask and fastAPI) and have learned to use Kubernetes with automated deployment via [Helm](https://helm.sh/).
+I made a [large OSS-contribution](https://github.com/microsoft/presidio/pull/312) to the [Microsoft's presidio](https://github.com/microsoft/presidio) anonymization library to completely rewrite the python analyzer engine. The primary feature that I added was the ability to use multiple language models at once, which enabled multilingual capabilities to the library. But I also completely modernized their unit tests, optimized the code, and removed a lot of hard-coded variables.
 
 ### Machine Learning Engineer @ i2x GmbH
 
@@ -23,17 +23,17 @@ Although my primarily responsibilities were NLP, I experimented with several new
 
 Lastly, due to my proficiency with linux, I was the ML team’s de facto systems administrator for our in-house multi-GPU dev machines, so I’m proficient with the \*nix cli ecosystem.  
 
+### Lead Developer @ PyTorch Audio
+
+##### Berlin - 06/2017 to 01/2019
+
+I was the lead developer for PyTorch’s official audio loading library, torchaudio, and continue to be involved in the project. I work directly with the PyTorch team at Facebook on this project. I have implemented input error checking testing, audio datasets, variable length input collate functions, audio IO funcationality via SoX (Sound eXchange), and added audio transformations (both implemented directly in PyTorch and using PyTorch’s c++ hooks for SoX’s effects chain). Additionally, I transferred the main PyTorch project’s code flaking and documentation standards to this project. In October 2018, I was invited to the PyTorch developer conference for my contributions to the project.  I continue to follow the project and contribute when I can. I am an author on the paper, "torchaudio: Building Blocks for Audio and Speech Processing" (submitted to ICASSP Oct. 2021).
+
 ### Machine Learning Fellow @ Fellowship.ai
 
 ##### Berlin - 01/2019 to 04/2019
 
 Once again, I developed an end-to-end solution to do image classification on a fashion dataset. We achieved state of the art results in the task classifying a fashion style from the Fashion14 dataset. In preparation for a weekly reading group, I optimized an implementation of memory networks on the babi question answer dataset. Worked on implementing semi-supervised semantic segmentation utilizing Deep Extreme Cut and DeepLab-v3+.
-
-### Lead Developer @ PyTorch Audio
-
-##### Berlin - 06/2017 to 01/2019
-
-I was the lead developer for PyTorch’s official audio loading library, torchaudio, and continue to be involved in the project. I work directly with the PyTorch team at Facebook on this project. I have implemented input error checking testing, audio datasets, variable length input collate functions, audio IO funcationality via SoX (Sound eXchange), and added audio transformations (both implemented directly in PyTorch and using PyTorch’s c++ hooks for SoX’s effects chain). Additionally, I transferred the main PyTorch project’s code flaking and documentation standards to this project. In October 2018, I was invited to the PyTorch developer conference for my contributions to the project.  I continue to follow the project and contribute when I can.
 
 ### Machine Learning Engineer (Student Job) @ YEAY GmbH
 
