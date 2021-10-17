@@ -44,4 +44,8 @@ Just edit the `README.md` file and commit / push changes to github.  The pre-com
 * `resume_v2/config.toml`  
 * `resume_v2/content/footer.md`  
 * `resume_v2/templates/index.html`  
-* `resume_v2/sass/no-print.scss`  
+* `resume_v2/sass/no-print.scss` 
+
+## Troubleshooting
+
+The site is build with a github action that requires a github personal token, which is only valid for one year.  If the action fails, create a new token and re-run the action.
