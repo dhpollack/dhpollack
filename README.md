@@ -1,8 +1,14 @@
 ## Experience
 
+### Senior Machine Learning Engineer @ Delivery Hero GmbH
+
+##### Berlin - 05/2022 to Present
+
+Machine learning engineer at Delivery Hero.
+
 ### Senior Machine Learning Engineer @ Solvemate GmbH
 
-##### Berlin - 02/2020 to Present
+##### Berlin - 02/2020 to 04/2022
 
 I led the project to implement free-text input into an existing decision tree-based click-bot. One project I am particular proud of is a word vectorization microservice that allows for configurable pipelines of word vectorization models, preprocessing and postprocessing, and sentiment analysis. This included a solution to benchmark the different pipelines (model + preprocessor combinations) used by this microservice. I also trained custom models in multiple languages for our word vectorization. Currently, I am tasked with troubleshooting and maintaining of our kubernetes-based architechture and develop a custom python-based cli-tool to automate tasks used by the entire engineering team. My latest project is adding a voice channel to our bots so our product can be accesssed via a telephone or another voice-based channel. 
 
