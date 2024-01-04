@@ -1,4 +1,4 @@
 +++
 render = false
 +++
-| Braunschweiger Straße 54, 12055 Berlin | +49 152 0476 3223 | david@sologourmand.com |
+| Straßburger Strße 38, 10405 Berlin | +49 152 0476 3223 | david@sologourmand.com |
