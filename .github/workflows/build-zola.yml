@@ -15,8 +15,12 @@ jobs:
           BUILD_ONLY: true
       - uses: browser-actions/setup-chrome@v1
         id: setup-chrome
-        with:
-          install-dependencies: true
+      - name: Install Chrome dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libglib2.0-0 libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 \
+            libgdk-pixbuf2.0-0 libgtk-3-0 libgbm-dev libnss3-dev libxss-dev libasound2 xvfb fonts-liberation \
+            libu2f-udev xdg-utils
       - name: generate-pdfs
         run: |
           ${{ steps.setup-chrome.outputs.chrome-path }} --headless --disable-gpu --no-margins --no-pdf-header-footer --print-to-pdf=resume_v2/static/david-pollack-resume.pdf resume_v2/public/index.html
