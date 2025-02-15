@@ -1,6 +1,6 @@
 ## Experience
 
-### Senior Machine Learning Engineer @ Delivery Hero GmbH
+### Senior Machine Learning Engineer @ Delivery Hero SE
 
 ##### Berlin - 05/2022 to Present
 
