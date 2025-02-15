@@ -37,8 +37,8 @@ jobs:
             libxrandr2
       - name: generate-pdfs
         run: |
-          ${{ steps.setup-chrome.outputs.chrome-path }} --headless --disable-gpu --no-margins --no-pdf-header-footer --print-to-pdf=resume_v2/static/david-pollack-resume.pdf resume_v2/public/index.html
-          ${{ steps.setup-chrome.outputs.chrome-path }} --headless --disable-gpu --no-margins --no-pdf-header-footer --print-to-pdf=resume_v2/static/david-pollack-cover-letter.pdf resume_v2/public/coverletter-with-frontmatter/index.html
+          ${{ steps.setup-chrome.outputs.chrome-path }} --no-sandbox --headless --disable-gpu --no-margins --no-pdf-header-footer --print-to-pdf=resume_v2/static/david-pollack-resume.pdf resume_v2/public/index.html
+          ${{ steps.setup-chrome.outputs.chrome-path }} --no-sandbox --headless --disable-gpu --no-margins --no-pdf-header-footer --print-to-pdf=resume_v2/static/david-pollack-cover-letter.pdf resume_v2/public/coverletter-with-frontmatter/index.html
       # Build & deploy
       - name: deploy
         uses: shalzz/zola-deploy-action@v0.18.0
