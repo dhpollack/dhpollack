@@ -33,7 +33,7 @@ build: generate build-chromium-image
       --disable-gpu \
       --disable-dev-shm-usage \
       --no-margins \
-      --print-to-pdf-no-header \
+      --no-pdf-header-footer \
       --print-to-pdf=/app/static/david-pollack-resume.pdf \
       file:///app/public/index.html
 
@@ -44,7 +44,7 @@ build: generate build-chromium-image
       --disable-gpu \
       --disable-dev-shm-usage \
       --no-margins \
-      --print-to-pdf-no-header \
+      --no-pdf-header-footer \
       --print-to-pdf=/app/static/david-pollack-cover-letter.pdf \
       file:///app/public/coverletter-with-frontmatter/index.html
 
