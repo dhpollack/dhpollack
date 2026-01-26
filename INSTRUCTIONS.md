@@ -2,41 +2,45 @@
 
 ## Requires
 
-* [zola](https://www.getzola.org) - `yay -S zola`  
-* [chromium](https://www.chromium.org/) - `yay -S chromium`  
+* [Docker](https://www.docker.com/) - For building the site and generating PDFs
+* (Optional) [just](https://github.com/casey/just) - For running commands (can also use bash directly)
 
 ## Basics
 
-1. Clone the repo and configure the pre-commit hook  
+1. Clone the repo and set up the project:
 
 ```
-git clone --recursive git@github.com:dhpollack/dhpollack.git 
-git config --local core.hooksPath hooks/
+git clone --recursive git@github.com:dhpollack/dhpollack.git
+cd dhpollack
+just setup
 ```
 
-2. Edit the `README.md` file.  
-3. Add the file to be committed `git add README.md`.  
-4. [Optional] Run the pre-commit hook manually and check site locally  
+2. Edit the `README.md` file.
+3. Build the site and generate PDFs:
 
 ```
-./hooks/pre-commit
-cd resume_v2
-zola serve
+just build
 ```
 
-5. Push to GitHub `git push origin master`
+4. Commit changes and push to GitHub:
+
+```
+git add README.md resume_v2/content/README_with_frontmatter.md resume_v2/static/david-pollack-resume.pdf
+git commit -m "Update resume"
+git push origin master
+```
 
 ## Test Locally
 
 ```
-# see hooks/pre-commit to update README_with_frontmatter.md and generate pdf if needed
-cd resume_v2
-zola serve
+# Build the site and serve locally
+just build
+just resume serve
 ```
 
 ## Editing
 
-Just edit the `README.md` file and commit / push changes to github.  The pre-commit hook should do the rest automatically.  
+Edit the `README.md` file, then run `just build` to update the site and generate PDFs. Commit the changed files (`README.md`, `resume_v2/content/README_with_frontmatter.md`, and `resume_v2/static/david-pollack-resume.pdf`) and push to GitHub.
 
 ## Files Edited
 

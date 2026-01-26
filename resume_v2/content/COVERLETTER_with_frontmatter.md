@@ -1,5 +1,5 @@
 +++
-render = false
+template = "cover_letter.html"
 +++
 ## David Pollack - Cover Letter
 TLDR; Passionate about creating ml tooling, building infrastructure and ml ops.  Contributed to a lot of OSS projects such as PyTorch, Torchaudio and Metaflow.  Also named as an author on the [official Torchaudio paper](https://arxiv.org/abs/2110.15018).

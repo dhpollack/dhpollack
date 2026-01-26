@@ -1,0 +1,53 @@
+# Justfile for resume_v2 Zola site
+
+default:
+  just -u -l
+
+_zola *args:
+    docker run -u "$(id -u):$(id -g)" -v $PWD:/app --workdir /app -p 8989:8989 ghcr.io/getzola/zola:v0.19.1 {{ args }}
+
+# Serve the site locally
+serve: build
+    just _zola serve --interface 0.0.0.0 --port 8989 --base-url localhost
+
+# Build the site (no PDF generation)
+generate:
+    just _zola build
+
+# Build Chromium Docker image for PDF generation
+build-chromium-image:
+    docker build -f Dockerfile.chromium -t local/chromium:latest .
+
+# Generate PDFs (requires chromium)
+build: generate build-chromium-image
+    #!/usr/bin/env bash
+
+    # Remove base URL from HTML files for local PDF generation
+    sed -i 's/https:&#x2F;&#x2F;dhpollack.github.io&#x2F;dhpollack&#x2F;//g' public/index.html public/coverletter-with-frontmatter/index.html
+
+    # Generate PDFs using headless Chrome in Docker container
+    docker run --rm -u "$(id -u):$(id -g)" -v "$PWD":/app --workdir /app local/chromium:latest \
+      chromium-browser \
+      --no-sandbox \
+      --headless \
+      --disable-gpu \
+      --disable-dev-shm-usage \
+      --no-margins \
+      --print-to-pdf-no-header \
+      --print-to-pdf=/app/static/david-pollack-resume.pdf \
+      file:///app/public/index.html
+
+    docker run --rm -u "$(id -u):$(id -g)" -v "$PWD":/app --workdir /app local/chromium:latest \
+      chromium-browser \
+      --no-sandbox \
+      --headless \
+      --disable-gpu \
+      --disable-dev-shm-usage \
+      --no-margins \
+      --print-to-pdf-no-header \
+      --print-to-pdf=/app/static/david-pollack-cover-letter.pdf \
+      file:///app/public/coverletter-with-frontmatter/index.html
+
+# Clean built files (public directory)
+clean:
+    rm -rf public
